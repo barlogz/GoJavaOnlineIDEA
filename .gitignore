@@ -1,0 +1,9 @@
+out/
+.idea/
+M1
+*.iml
+*.iws
+/GoJavaOnlineFirstProgram.java
+/src/com/goit/gojavaonline/module3
+/src/com/goit/gojavaonline/M1
+/src/com/goit/gojavaonline/Vebinars
