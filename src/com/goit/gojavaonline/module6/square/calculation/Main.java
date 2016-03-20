@@ -50,14 +50,16 @@ public class Main {
         }
 
         try {
+            Scanner scanner3 = new Scanner(System.in);
+
             System.out.println("Расчет площади треугольника. Введите длину стороны 1");
-            double a = scanner.nextDouble();
+            double a = scanner3.nextDouble();
 
             System.out.println("Введите длину стороны 2");
-            double b = scanner.nextDouble();
+            double b = scanner3.nextDouble();
 
             System.out.println("Введите длину стороны 3");
-            double c = scanner.nextDouble();
+            double c = scanner3.nextDouble();
 
             System.out.println("Вы ввели стороны " + a + " и " + b + " и " + c);
 
