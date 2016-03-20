@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        final Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         try {
             System.out.println("Расчет площади прямоугольника. Введите длину стороны 1");
@@ -31,8 +31,10 @@ public class Main {
 
 
         try {
+            Scanner scanner2 = new Scanner(System.in);
+
             System.out.println("Расчет площади круга. Введите радиус");
-            double a = scanner.nextDouble();
+            double a = scanner2.nextDouble();
 
             System.out.println("Вы ввели радиус " + a);
 
@@ -47,7 +49,7 @@ public class Main {
             System.out.println("|ERROR| Данные введены неверно! " + e2);
         }
 
-       /* try {
+        try {
             System.out.println("Расчет площади треугольника. Введите длину стороны 1");
             double a = scanner.nextDouble();
 
@@ -68,7 +70,7 @@ public class Main {
 
         } catch (InputMismatchException e) {
             System.out.println("|ERROR| Данные введены неверно! " + e);
-        } */
+        }
     }
 
 }
