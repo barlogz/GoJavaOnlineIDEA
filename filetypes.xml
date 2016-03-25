@@ -1,0 +1,8 @@
+<application>
+  <component name="FileTypeManager" version="16">
+    <extensionMap>
+      <mapping pattern="GoJavaOnlineM3" type="CLASS" />
+      <mapping pattern="GoJavaOnlineM3.java" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>
