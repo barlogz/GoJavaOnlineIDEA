@@ -37,7 +37,7 @@ public class MusicStore {
                 }
             }
             if (quantityInStock < instrumentQuantity) {
-                throw new IllegalArgumentException("Как нет столько инструментов?! " + orderInstrumentType);
+                throw new IllegalArgumentException("Как, нет столько инструментов?! " + orderInstrumentType);
             }
         }
         return result;
@@ -154,41 +154,6 @@ public class MusicStore {
         store.setPianos(pianosToStay);
         result.addAll(pianosToRemove);
 
-        return result;
-
-//    public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order){
-//
-//      // тут код...
-//    }
-
-
-
-
-    }
-}
-
-
-
-
-
-/*
-    Map<String, Integer> quantityItems = new HashMap<>();
-
-    public MusicStore(Map<String, Integer> items) {
-        this.quantityItems = items;
-    }
-
-    public Map<String, Integer> init(String itemName) {
-        Map<String,Integer> listOfItems = new HashMap<String,Integer>();
-        listOfItems.put("guitar",2);
-
-        return sensorValues;
-    }
-
-}
-
-
-}
 
 */
 /*  Добавить в магазин инструментов метод, который готовит к отгрузке партию музыкальных инструментов согласно заказу.
