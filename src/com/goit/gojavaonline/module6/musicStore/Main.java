@@ -22,7 +22,7 @@ public class Main {
         Map<String, Integer> order = new HashMap<>();
         order.put("Guitar", 10);
         order.put("Piano", 5);
-        order.put("Trumpet", 7);
+        order.put("TTTTTTTrumpet", 7);
         System.out.println("Order contains: ");
 
         try {

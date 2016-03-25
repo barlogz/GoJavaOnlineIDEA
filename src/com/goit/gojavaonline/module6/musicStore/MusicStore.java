@@ -39,9 +39,12 @@ public class MusicStore {
             if (quantityInStock < instrumentQuantity) {
                 throw new IllegalArgumentException("Как, нет столько инструментов?! " + orderInstrumentType);
             }
+
         }
+
         return result;
     }
+
 
     public static void removeGoodsFromStock(MusicStore store, Map<String, Integer> order) {
         for (Map.Entry<String, Integer> orderEntry : order.entrySet()) {
@@ -56,10 +59,20 @@ public class MusicStore {
                     numberInstrumentRemoved++;
                 }
             }
+
+            try {
+                if (!"Guitar".equals(orderInstrumentType)) {
+                } else if (!"Piano".equals(orderInstrumentType)) {
+                } else {
+                    if (!"Trumpet".equals(orderInstrumentType))
+                        throw new ExceptionForInstrumentName(orderInstrumentType);
+                }
+            } catch (ExceptionForInstrumentName exceptionForInstrumentName) {
+                exceptionForInstrumentName.printStackTrace();
+            }
         }
     }
 }
-
 
 
     /*@Override
