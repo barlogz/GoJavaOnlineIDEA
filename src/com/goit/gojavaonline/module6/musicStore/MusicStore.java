@@ -37,16 +37,14 @@ public class MusicStore {
                 }
             }
             if (quantityInStock < instrumentQuantity) {
-                        throw new IllegalArgumentException("Ваш заказ не може быть выполнен. " +
-                                "Нет таких товаров в таком количестве." + orderInstrumentType);
+                throw new IllegalArgumentException("Ваш заказ не може быть выполнен. " +
+                        "Нет таких товаров в таком количестве." + orderInstrumentType);
 
             }
         }
         return result;
 
     }
-
-
 
 
     public static void removeGoodsFromStock(MusicStore store, Map<String, Integer> order) {
