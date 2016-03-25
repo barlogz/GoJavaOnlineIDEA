@@ -1,10 +1,7 @@
 package com.goit.gojavaonline.module6.musicStore;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MusicStore {
     private List<MusicalInstrument> instruments;
@@ -22,6 +19,44 @@ public class MusicStore {
         return "MusicStore{" +
                 "instruments=" + instruments +
                 '}';
+    }
+
+    public static List<MusicalInstrument> prepareInstruments(MusicStore store, Map<String, Integer> order) {
+        List<MusicalInstrument> result = new ArrayList<>();
+        for (Map.Entry<String, Integer> orderEntry : order.entrySet()) {
+            String orderInstrumentType = orderEntry.getKey();
+            Integer instrumentQuantity = orderEntry.getValue();
+
+            System.out.println(orderInstrumentType + " " + instrumentQuantity);
+
+            int quantityInStock = 0;
+            for (MusicalInstrument instrument : store.getInstruments()) {
+                if (instrument.getType().equals(orderInstrumentType) && quantityInStock < instrumentQuantity) {
+                    result.add(instrument);
+                    quantityInStock++;
+                }
+            }
+            if (quantityInStock < instrumentQuantity) {
+                throw new IllegalArgumentException("Как нет столько инструментов?! " + orderInstrumentType);
+            }
+        }
+        return result;
+    }
+
+    public static void removeGoodsFromStock(MusicStore store, Map<String, Integer> order) {
+        for (Map.Entry<String, Integer> orderEntry : order.entrySet()) {
+            String orderInstrumentType = orderEntry.getKey();
+            Integer instrumentsQuantity = orderEntry.getValue();
+            int numberInstrumentRemoved = 0;
+            Iterator<MusicalInstrument> iterator = store.getInstruments().iterator();
+            while (iterator.hasNext()) {
+                MusicalInstrument instrument = iterator.next();
+                if (instrument.getType().equals(orderInstrumentType) && numberInstrumentRemoved < instrumentsQuantity) {
+                    iterator.remove();
+                    numberInstrumentRemoved++;
+                }
+            }
+        }
     }
 }
 
