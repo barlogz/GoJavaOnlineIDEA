@@ -8,21 +8,22 @@ public class Main {
 
         List<MusicalInstrument> instruments;
         instruments = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             instruments.add(new Guitar());
         }
         for (int i = 0; i < 10; i++) {
             instruments.add(new Piano());
         }
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 10; i++) {
             instruments.add(new Trumpet());
         }
         store.setInstruments(instruments);
 
         Map<String, Integer> order = new HashMap<>();
-        order.put("Guitar", 10);
-        order.put("Piano", 5);
-        order.put("TTTTTTTrumpet", 7);
+        order.put("Guitar", 3);
+        order.put("Piano", 4);
+        order.put("Trumpet", 5);
+
         System.out.println("Order contains: ");
 
         try {
@@ -39,14 +40,12 @@ public class Main {
         for (MusicalInstrument instrument : instruments) {
             if (instrument.getType().equals("Guitar")) {
                 countGuitars++;
-            } else if (instrument.getType().equals("Piano")){
+            } else if (instrument.getType().equals("Piano")) {
                 countPiano++;
             } else if (instrument.getType().equals("Trumpet")) {
                 countTrumpet++;
             }
         }
-
-
 
         System.out.println("");
         System.out.println("Instruments left in store:");

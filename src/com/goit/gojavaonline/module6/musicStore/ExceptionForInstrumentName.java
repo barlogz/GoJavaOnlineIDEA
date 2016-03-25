@@ -1,13 +1,13 @@
 package com.goit.gojavaonline.module6.musicStore;
 
 public class ExceptionForInstrumentName extends Exception {
-    private String orderInstrumentType;
+    private String type;
 
     public ExceptionForInstrumentName(String orderInstrumentType) {
-        this.orderInstrumentType = orderInstrumentType;
+        this.type = orderInstrumentType;
     }
 
-    public String getOrderInstrumentType() {
-        return orderInstrumentType;
+    public String getType() {
+        return type;
     }
 }
