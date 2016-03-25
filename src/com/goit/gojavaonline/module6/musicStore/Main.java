@@ -6,22 +6,24 @@ public class Main {
     public static void main(String[] args) {
         MusicStore store = new MusicStore();
 
-        List<MusicalInstrument> instruments = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        List<MusicalInstrument> instruments;
+        instruments = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
             instruments.add(new Guitar());
         }
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 10; i++) {
             instruments.add(new Piano());
         }
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             instruments.add(new Trumpet());
         }
         store.setInstruments(instruments);
 
         Map<String, Integer> order = new HashMap<>();
         order.put("Guitar", 3);
-        order.put("Piano", 2);
-        order.put("Trumpet", 2);
+        order.put("Piano", 4);
+        order.put("Trumpet", 5);
+
         System.out.println("Order contains: ");
 
         try {
@@ -32,7 +34,25 @@ public class Main {
             System.out.println("Exception happened: " + e.getMessage());
         }
 
-        instruments.forEach(System.out::println);
+        int countGuitars = 0;
+        int countPiano = 0;
+        int countTrumpet = 0;
+        for (MusicalInstrument instrument : instruments) {
+            if (instrument.getType().equals("Guitar")) {
+                countGuitars++;
+            } else if (instrument.getType().equals("Piano")) {
+                countPiano++;
+            } else if (instrument.getType().equals("Trumpet")) {
+                countTrumpet++;
+            }
+        }
+
+        System.out.println("");
+        System.out.println("Instruments left in store:");
+        System.out.println("Guitar " + countGuitars);
+        System.out.println("Piano " + countPiano);
+        System.out.println("Trumpet " + countTrumpet);
+
     }
 
 
