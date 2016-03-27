@@ -2,7 +2,7 @@ package com.goit.gojavaonline.module8.musicStore;
 
 public class MusicStore {
 
-    public void printCollection() {
+    public void printInstrumentsInStore() {
 
         ListOfInstruments instruments = new ListOfInstruments();
         instruments.makeListOfInstruments();
