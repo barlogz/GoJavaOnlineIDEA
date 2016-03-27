@@ -13,8 +13,25 @@ public abstract class MusicalInstrument {
         this.price = price;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
-        return "MusicalInstrument{" + getType() + "}";
+        return "|"      +getClass().getSuperclass().getSimpleName() +
+                " \t |  " + getClass().getSimpleName()+
+                "\t|   "  + color+
+                "\t|"    + weight +
+                "\t|"    +
+                price     +  "   \t|";
     }
 }

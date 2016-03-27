@@ -13,6 +13,11 @@ public class MusicStore {
         Guitar electricGuitar = new Guitar("Red", 3, 1800);
         Guitar acousticGuitar = new Guitar("Woodean", 2, 500);
 
+        List<MusicalInstrument> guitars = new ArrayList<>();
+        guitars.add(bassGuitar);
+        guitars.add(electricGuitar);
+        guitars.add(acousticGuitar);
+
         Piano synthesizers = new Piano("Silver", 4, 300);
         Piano digitalPiano = new Piano("White", 25, 2000);
         Piano acousticPiano = new Piano("Black", 60, 4000);
@@ -22,10 +27,6 @@ public class MusicStore {
         Trumpet merano = new Trumpet("Blue", 6, 99);
 
 
-        List<MusicalInstrument> guitars = new ArrayList<>();
-        guitars.add(bassGuitar);
-        guitars.add(electricGuitar);
-        guitars.add(acousticGuitar);
 
         List<MusicalInstrument> pianos = new ArrayList<>();
         pianos.add(synthesizers);
@@ -43,15 +44,31 @@ public class MusicStore {
         instruments.addAll(trumpets);
 //        String instrumentsString = Arrays.toString(instruments);
 
-        System.out.println(instruments + "");
+        System.out.println(instruments.get(price));
 //        System.out.println(bassGuitar + bassGuitar.color + bassGuitar.price + bassGuitar.weight);
 //        System.out.println(guitars.get(i).color);
-//        System.out.println(instrumentsString);
-        System.out.println(instruments.getClass().getSuperclass().getSimpleName());
-        System.out.println(instruments.getClass().getSimpleName());
-        System.out.println(instruments.getClass().getSuperclass());
-        System.out.println(guitars.getClass().getSuperclass().getSimpleName());
-        System.out.println(guitars.getClass().getSuperclass().getSimpleName());
+
+        public void print() {
+//            CollectionList collectionList = new CollectionList();
+//            collectionList.makeCollectionList();
+            System.out.println("collectionList.size()=" + collectionList.collectionList.size());
+            //new GFrame();
+            System.out.println(collectionList.getCollection().get(0).filesName);
+            System.out.println("------------------------------------------------------");
+            System.out.println("|Super   |  Object      | Object    |Object | Object |");
+            System.out.println("|Name    |  Name        | Field1    |Field2 | Field3 |");
+            System.out.println("------------------------------------------------------");
+
+            for (int n = 0; n < collectionList.getCollection().size(); n++) {
+                Object o = collectionList.getCollection().get(n);
+
+
+                System.out.println(o);
+            }
+            System.out.println("------------------------------------------------------");
+
+        }
+
 
     }
 
