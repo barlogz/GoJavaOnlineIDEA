@@ -14,7 +14,7 @@ public class ListOfGuitars {
     public void makeListOfGuitars() {
 
         Guitar bassGuitar = new Guitar("Black", 4, 10000);
-        Guitar electricGuitar = new Guitar("Red", 3, 1800);
+        Guitar electricGuitar = new Guitar("Red   ", 3, 1800);
         Guitar acousticGuitar = new Guitar("Woodean", 2, 500);
 
         guitars.add(bassGuitar);

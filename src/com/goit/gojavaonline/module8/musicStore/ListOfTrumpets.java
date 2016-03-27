@@ -14,8 +14,8 @@ public class ListOfTrumpets {
     public void makeListOfTrumpets () {
 
         Trumpet mendini = new Trumpet("Silver", 6, 300);
-        Trumpet jeanPaul = new Trumpet("Gold", 5, 200);
-        Trumpet merano = new Trumpet("Blue", 6, 99);
+        Trumpet jeanPaul = new Trumpet("Gold  ", 5, 200);
+        Trumpet merano = new Trumpet("Blue  ", 6, 99);
 
         trumpets.add(mendini);
         trumpets.add(jeanPaul);

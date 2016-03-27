@@ -27,10 +27,9 @@ public abstract class MusicalInstrument {
 
     @Override
     public String toString() {
-        return "|"      +getClass().getSuperclass().getSimpleName() +
-                " \t | " + getClass().getSimpleName()+
-                " \t | "  + color+
-                " \t | "    + weight +
-                " \t | "    + price     +  "   \t|";
+        return "| " + getType()+
+                " \t | " + color +
+                "\t | " + weight +
+                " \t | " + price  + "   \t|";
     }
 }
