@@ -4,6 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        MusicStore printCollection = new MusicStore();
+        printCollection.printCollection();
 
     }
 
