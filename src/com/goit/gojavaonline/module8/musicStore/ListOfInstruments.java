@@ -30,7 +30,7 @@ public class ListOfInstruments {
     @Override
     public String toString() {
         return "ListOfInstruments{" +
-                "instruments=" + instruments.size() +
+                "instruments=" + instruments +
                 '}';
     }
 }
