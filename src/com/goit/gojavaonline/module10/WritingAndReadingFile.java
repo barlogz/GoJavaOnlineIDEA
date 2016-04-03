@@ -1,40 +1,41 @@
 package com.goit.gojavaonline.module10;
 
 import com.goit.gojavaonline.module9.CaesarCipher;
+
 import java.io.*;
+import java.util.Scanner;
 
 public class WritingAndReadingFile {
     public static void main(String[] args) throws IOException {
         try {
             CaesarCipher caesarCipher = new CaesarCipher();
+            Scanner scanner = new Scanner(System.in);
 
             String textForWritingToFile = "Text which must be encrypted and written to the file.";
             System.out.println("Text message to be written to the file: \n" + textForWritingToFile + "\n");
 
-            textForWritingToFile = caesarCipher.encrypt(textForWritingToFile, 3, 6);
+            System.out.println("Please, enter the key for encryption (from 1 to 100):");
+            int key = scanner.nextInt();
+
+            textForWritingToFile = caesarCipher.encrypt(textForWritingToFile, 1, key);
             write("output.txt", textForWritingToFile);
 
-            System.out.println("Recorded ciphertext");
+            System.out.println("Recorded ciphered text");
             System.out.println(read("output.txt"));
 
-            String textFromFile = caesarCipher.decrypt((read("output.txt")), 3, 6);
+            String textFromFile = caesarCipher.decrypt((read("output.txt")), 1, key);
             System.out.println("Decrypted text from file: \n" + textFromFile);
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+        } catch (IOException | RuntimeException ex) {
+            System.err.println("|ERROR| key was entered in wrong format!");
         }
+
     }
 
     public static void write(String fileName, String text) {
         File file = new File(fileName);
 
-        try {
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-
-            try (PrintWriter printOut = new PrintWriter(file.getAbsoluteFile())) {
+        try (PrintWriter printOut = new PrintWriter(file.getAbsoluteFile())) {
                 printOut.write(text);
-            }
         } catch (IOException ex) {
             throw new RuntimeException(ex.getMessage());
         }
@@ -65,3 +66,17 @@ public class WritingAndReadingFile {
         }
     }
 }
+
+
+//try {
+//        if (!file.exists()) {
+//        file.createNewFile();
+//        }
+//
+//        try (PrintWriter printOut = new PrintWriter(file.getAbsoluteFile())) {
+//        printOut.write(text);
+//        }
+//        } catch (IOException ex) {
+//        throw new RuntimeException(ex.getMessage());
+//        }
+//        }
