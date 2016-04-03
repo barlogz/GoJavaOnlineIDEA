@@ -5,10 +5,13 @@ import java.util.List;
 
 public class CaesarCipher {
 
-    List<Character> alphabet = new ArrayList<Character>();
-    private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-'}; {
+    List<Character> alphabet = new ArrayList<>();
+    private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-', ' ', '"'}; {
 
         for (char c = 'a'; c <= 'z'; c++) {
+            alphabet.add(c);
+        }
+        for (char c = 'A'; c <= 'Z'; c++) {
             alphabet.add(c);
         }
         for (char c = '0'; c <= '9'; c++) {
@@ -19,7 +22,7 @@ public class CaesarCipher {
         }
     }
 
-    String encrypt(String text, int m, int k) {
+    public String encrypt(String text, int m, int k) {
         int n = alphabet.size();
         m = m % n;
         k = k % n;
