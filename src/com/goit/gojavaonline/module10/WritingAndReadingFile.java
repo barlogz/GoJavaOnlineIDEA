@@ -66,17 +66,3 @@ public class WritingAndReadingFile {
         }
     }
 }
-
-
-//try {
-//        if (!file.exists()) {
-//        file.createNewFile();
-//        }
-//
-//        try (PrintWriter printOut = new PrintWriter(file.getAbsoluteFile())) {
-//        printOut.write(text);
-//        }
-//        } catch (IOException ex) {
-//        throw new RuntimeException(ex.getMessage());
-//        }
-//        }
