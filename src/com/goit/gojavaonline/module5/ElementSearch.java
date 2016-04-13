@@ -6,13 +6,15 @@ public class ElementSearch {
     public static void main(String[] args) {
         int[] intArray = {1, 4, 3, 2, 5, -20, 805, 105};
 
-        Arrays.sort(intArray);
-        System.out.println(intArray[0]);
-        System.out.println(intArray[intArray.length-1]);
+//        Arrays.sort(intArray);
+        ArraySort.arraySortMethod(intArray);
+        System.out.println("Min element: " + intArray[0]);
+        System.out.println("Max element: " + intArray[intArray.length-1]);
 
-//        for (int element : intArray) {
-//            System.out.println(element);
-//        }
+        for (int element : intArray) {
+            System.out.println(element);
+            System.out.println(Arrays.toString(intArray));
+        }
     }
 
 }
