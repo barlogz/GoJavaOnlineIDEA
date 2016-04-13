@@ -38,11 +38,6 @@ public class SquareCalculationTest {
         final double result = triangle.square();
         System.out.println(result);
 
-        Assert.assertEquals(1.623797, result, 0.000001);
+        Assert.assertEquals(1.711841, result, 0.000001);
     }
-
 }
-
-//
-//        Figure triangle = new Triangle(1.5,2.5,3.4);
-//        System.out.printl
