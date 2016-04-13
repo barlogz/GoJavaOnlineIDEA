@@ -1,16 +1,18 @@
 package com.goit.gojavaonline.module4.square.calculation;
 
-    public class Circle extends Figure{
-        private double radius;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
-        public Circle(double radius){
-            this.radius = radius;
-        }
+public class Circle extends Figure {
+    private double radius;
 
-        @Override
-        public double square() {
-            return Math.PI * Math.pow(radius, 2);
-        }
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
+    @Override
+    public double square() {
+        return new BigDecimal(Math.PI * Math.pow(radius, 2)).setScale(6, RoundingMode.HALF_UP).doubleValue();
+    }
+}
 

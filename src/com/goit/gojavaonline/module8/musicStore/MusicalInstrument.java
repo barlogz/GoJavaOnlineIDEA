@@ -3,9 +3,10 @@ package com.goit.gojavaonline.module8.musicStore;
 public abstract class MusicalInstrument {
 
     public abstract String getType();
-    public String color;
-    public int weight;
-    public int price;
+
+    private String color;
+    private int weight;
+    private int price;
 
     public MusicalInstrument(String color, int weight, int price) {
         this.color = color;

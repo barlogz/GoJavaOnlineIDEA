@@ -9,7 +9,7 @@ public class Rectangle extends Figure{
     }
 
     @Override
-    double square() {
+    public double square() {
         return sideA * sideB;
     }
 
