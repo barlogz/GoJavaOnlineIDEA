@@ -1,9 +1,10 @@
 package Tests;
 
 import com.goit.gojavaonline.module4.square.calculation.*;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class SquareCalculationTest {
 
@@ -18,7 +19,7 @@ public class SquareCalculationTest {
         final double result = rectangle.square();
         System.out.println(result);
 
-        Assert.assertEquals(3.18, result, 0.001);
+        assertEquals(3.18, result, 0.001);
     }
 
     @Test
@@ -28,7 +29,7 @@ public class SquareCalculationTest {
         final double result = circle.square();
         System.out.println(result);
 
-        Assert.assertEquals(7.068583, result, 0.000001);
+        assertEquals(7.068583, result, 0.000001);
     }
 
     @Test
@@ -38,6 +39,6 @@ public class SquareCalculationTest {
         final double result = triangle.square();
         System.out.println(result);
 
-        Assert.assertEquals(1.711841, result, 0.000001);
+        assertEquals(1.711841, result, 0.000001);
     }
 }

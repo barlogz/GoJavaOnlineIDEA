@@ -1,11 +1,11 @@
 package Tests;
 
 import com.goit.gojavaonline.module4.distance.calculation.DistanceBetweenPoints;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import static com.goit.gojavaonline.module4.distance.calculation.DistanceBetweenPoints.*;
+import static org.junit.Assert.*;
 
 public class DistanceBetweenPointsTest {
 
@@ -26,7 +26,7 @@ public class DistanceBetweenPointsTest {
 
         System.out.println(result);
 
-        Assert.assertEquals(11.293, result, 0.0001);
+        assertEquals(11.293, result, 0.0001);
 
     }
 
@@ -41,7 +41,7 @@ public class DistanceBetweenPointsTest {
 
         System.out.println(result);
 
-        Assert.assertEquals(10.771, result, 0.0001);
+        assertEquals(10.771, result, 0.0001);
 
     }
 
@@ -56,7 +56,7 @@ public class DistanceBetweenPointsTest {
 
         System.out.println(result);
 
-        Assert.assertEquals(2.0E64, result, 0.0001);
+        assertEquals(2.0E64, result, 0.0001);
 
     }
 
