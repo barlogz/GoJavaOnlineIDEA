@@ -2,8 +2,6 @@ package Tests;
 
 import com.goit.gojavaonline.module5.ArraySort;
 import com.goit.gojavaonline.module5.ElementSearch;
-import com.sun.deploy.util.ArrayUtil;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -16,10 +14,6 @@ public class ElementSearchTest {
     int[] unsortedArray1 = {1, 4, 3, 2, 5, -20, 805, 105};
     int[] unsortedArray2 = {1, 4, 3, 2, 5, -20, 805, 105};
     int[] sortedArray = {-20, 1, 2, 3, 4, 5, 105, 805};
-
-    @Before
-    public void setUp() throws Exception {
-    }
 
     @Rule
     public Timeout timeout = Timeout.seconds(2L);
