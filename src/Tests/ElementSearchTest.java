@@ -2,7 +2,9 @@ package Tests;
 
 import com.goit.gojavaonline.module5.ArraySort;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import java.util.Arrays;
 
@@ -17,7 +19,10 @@ public class ElementSearchTest {
     public void setUp() throws Exception {
     }
 
-    @Test(timeout = 1000)
+    @Rule
+    public Timeout timeout = Timeout.seconds(2L);
+
+    @Test
     public void testMain() throws Exception {
         Arrays.sort(unsortedArray1);
         ArraySort.arraySortMethod(unsortedArray2);
@@ -27,6 +32,10 @@ public class ElementSearchTest {
         System.out.println(Arrays.toString(unsortedArray1));
         System.out.println(Arrays.toString(unsortedArray2));
         System.out.println(Arrays.toString(sortedArray));
+    }
+
+    @Test
+    public void testName() throws Exception {
 
     }
 }

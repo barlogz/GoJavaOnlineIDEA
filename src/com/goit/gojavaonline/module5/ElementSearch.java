@@ -3,20 +3,26 @@ package com.goit.gojavaonline.module5;
 import java.util.Arrays;
 
 public class ElementSearch {
+
     public static void main(String[] args) {
         int[] intArray = {1, 4, 3, 2, 5, -20, 805, 105};
 
-//        Arrays.sort(intArray);
-        ArraySort.arraySortMethod(intArray);
-        System.out.println("Min element: " + intArray[0]);
-        System.out.println("Max element: " + intArray[intArray.length-1]);
-
-        for (int element : intArray) {
-            System.out.println(element);
-            System.out.println(Arrays.toString(intArray));
-        }
+        System.out.println("Min element: " + minimumElementSearch(intArray));
+        System.out.println("Max element: " + maximumElementSearch(intArray));
+        System.out.println("from array: " + "\n" + Arrays.toString(intArray));
     }
 
+    private static int minimumElementSearch(int[] intArray) {
+//        Arrays.sort(intArray);
+        ArraySort.arraySortMethod(intArray);
+        return intArray[0];
+    }
+
+    private static int maximumElementSearch(int[] intArray) {
+//        Arrays.sort(intArray);
+        ArraySort.arraySortMethod(intArray);
+        return intArray[intArray.length - 1];
+    }
 }
 
 
