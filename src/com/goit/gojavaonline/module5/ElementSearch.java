@@ -12,13 +12,13 @@ public class ElementSearch {
         System.out.println("from array: " + "\n" + Arrays.toString(intArray));
     }
 
-    private static int minimumElementSearch(int[] intArray) {
+    public static int minimumElementSearch(int[] intArray) {
 //        Arrays.sort(intArray);
         ArraySort.arraySortMethod(intArray);
         return intArray[0];
     }
 
-    private static int maximumElementSearch(int[] intArray) {
+    public static int maximumElementSearch(int[] intArray) {
 //        Arrays.sort(intArray);
         ArraySort.arraySortMethod(intArray);
         return intArray[intArray.length - 1];
