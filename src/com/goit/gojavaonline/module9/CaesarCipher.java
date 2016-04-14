@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CaesarCipher {
 
-    List<Character> alphabet = new ArrayList<>();
+    static List<Character> alphabet = new ArrayList<>();
     private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-', ' ', '"'}; {
 
         for (char c = 'a'; c <= 'z'; c++) {
@@ -22,7 +22,7 @@ public class CaesarCipher {
         }
     }
 
-    public String encrypt(String text, int m, int k) {
+    public static String encrypt(String text, int m, int k) {
         int n = alphabet.size();
         m = m % n;
         k = k % n;
@@ -40,7 +40,7 @@ public class CaesarCipher {
         return encryptedText.toString();
     }
 
-    public String decrypt(String text, int m, int k) {
+    public static String decrypt(String text, int m, int k) {
         int n = alphabet.size();
         m = m % n;
         k = k % n;
