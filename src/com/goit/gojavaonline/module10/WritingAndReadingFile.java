@@ -12,30 +12,29 @@ public class WritingAndReadingFile {
             Scanner scanner = new Scanner(System.in);
 
             String textForWritingToFile = "Text which must be encrypted and written to the file.";
-            System.out.println("Text message to be written to the file: \n" + textForWritingToFile + "\n");
+            System.out.println("This is the text message to be written to the file: \n" + textForWritingToFile + "\n");
 
             System.out.println("Please, enter the key for encryption (from 1 to 100):");
             int key = scanner.nextInt();
 
-            textForWritingToFile = caesarCipher.encrypt(textForWritingToFile, 1, key);
+            textForWritingToFile = CaesarCipher.encrypt(textForWritingToFile, 1, key);
             write("output.txt", textForWritingToFile);
 
             System.out.println("Recorded ciphered text");
             System.out.println(read("output.txt"));
 
-            String textFromFile = caesarCipher.decrypt((read("output.txt")), 1, key);
+            String textFromFile = CaesarCipher.decrypt((read("output.txt")), 1, key);
             System.out.println("Decrypted text from file: \n" + textFromFile);
         } catch (IOException | RuntimeException ex) {
             System.err.println("|ERROR| key was entered in wrong format!");
         }
-
     }
 
     public static void write(String fileName, String text) {
         File file = new File(fileName);
 
         try (PrintWriter printOut = new PrintWriter(file.getAbsoluteFile())) {
-                printOut.write(text);
+            printOut.write(text);
         } catch (IOException ex) {
             throw new RuntimeException(ex.getMessage());
         }

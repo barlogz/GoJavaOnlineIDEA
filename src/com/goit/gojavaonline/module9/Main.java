@@ -20,7 +20,6 @@ public class Main {
 
         System.out.println(CaesarCipher.decrypt(textToDecrypt, m, key));
     }
-
 }
 
 //Реализовать шифрование текста с помощью алгоритма Цезаря.
