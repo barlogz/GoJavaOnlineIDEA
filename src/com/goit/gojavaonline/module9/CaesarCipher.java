@@ -6,7 +6,9 @@ import java.util.List;
 public class CaesarCipher {
 
     static List<Character> alphabet = new ArrayList<>();
-    private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-', ' ', '"', '(', ')'}; {
+    private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-', ' ', '"', '(', ')', '|', '[', ']'};
+
+    {
 
         for (char c = 'a'; c <= 'z'; c++) {
             alphabet.add(c);
@@ -24,9 +26,13 @@ public class CaesarCipher {
 
     public static String encrypt(String text, int m, int k) {
         try {
-            if (m<=0 || k<=0) {
+            if (m <= 0 || k < 0) {
                 throw new IllegalArgumentException("Введено нулевое или отрицательное значение. Введите значение больше \"" + "0" + "\"");
             }
+            if (k == 0) {
+                throw new IllegalArgumentException("Введено нулевое значение ключа. Ваш текст не будет зашифрован");
+            }
+
             int n = alphabet.size();
             m = m % n;
             k = k % n;
@@ -43,37 +49,44 @@ public class CaesarCipher {
             }
             return encryptedText.toString();
 
-        } catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             throw new RuntimeException(e.getMessage());
         }
-
-
-
-
     }
 
     public static String decrypt(String text, int m, int k) {
-        int n = alphabet.size();
-        m = m % n;
-        k = k % n;
-        int reversedM = -1;//обратное к m
-
-        for (int i = 0; i < n; i++) {
-            if ((i * m) % n == 1) {
-                reversedM = i;
-                break;
+        try {
+            if (m <= 0 || k < 0) {
+                throw new IllegalArgumentException("Введено нулевое или отрицательное значение. Введите значение больше \"" + "0" + "\"");
             }
-        }
-        StringBuilder decryptedText = new StringBuilder();
-        //блок дешифрования данных
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            int index = alphabet.indexOf(c);
-            index = (((index - k) * reversedM) % n + n) % n;
-            decryptedText.append(alphabet.get(index));
-        }
-        return decryptedText.toString();
+            if (k == 0) {
+                throw new IllegalArgumentException("Введено нулевое значение ключа. Ваш текст не будет зашифрован");
+            }
 
+            int n = alphabet.size();
+            m = m % n;
+            k = k % n;
+            int reversedM = -1;//обратное к m
+
+            for (int i = 0; i < n; i++) {
+                if ((i * m) % n == 1) {
+                    reversedM = i;
+                    break;
+                }
+            }
+            StringBuilder decryptedText = new StringBuilder();
+            //блок дешифрования данных
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                int index = alphabet.indexOf(c);
+                index = (((index - k) * reversedM) % n + n) % n;
+                decryptedText.append(alphabet.get(index));
+            }
+            return decryptedText.toString();
+
+        } catch (IllegalArgumentException e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     //алгоритм поиска наибольшего общего делителя

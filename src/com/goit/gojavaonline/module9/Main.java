@@ -9,16 +9,16 @@ public class Main {
 
         System.out.println(instruments.toString());
 
-        CaesarCipher caesarCipher = new CaesarCipher();
+        new CaesarCipher();
 
         int m = 3;
         int key= 6;
-        String textToEncrypt = instruments.toString().toLowerCase();
-        String textToDecrypt = caesarCipher.encrypt(textToEncrypt, m, key);
+        String textToEncrypt = instruments.toString();
+        String textToDecrypt = CaesarCipher.encrypt(textToEncrypt, m, key);
 
-        System.out.println(caesarCipher.encrypt(textToEncrypt, m, key));
+        System.out.println(CaesarCipher.encrypt(textToEncrypt, m, key));
 
-        System.out.println(caesarCipher.decrypt(textToDecrypt, m, key));
+        System.out.println(CaesarCipher.decrypt(textToDecrypt, m, key));
     }
 
 }
