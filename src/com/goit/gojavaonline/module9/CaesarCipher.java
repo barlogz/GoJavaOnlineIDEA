@@ -6,7 +6,7 @@ import java.util.List;
 public class CaesarCipher {
 
     static List<Character> alphabet = new ArrayList<>();
-    private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-', ' ', '"'}; {
+    private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-', ' ', '"', '(', ')'}; {
 
         for (char c = 'a'; c <= 'z'; c++) {
             alphabet.add(c);
@@ -23,21 +23,33 @@ public class CaesarCipher {
     }
 
     public static String encrypt(String text, int m, int k) {
-        int n = alphabet.size();
-        m = m % n;
-        k = k % n;
-        if (gcd(n, m) != 1) {//проверка простоты n относительно m
-            return null;
+        try {
+            if (m<=0 || k<=0) {
+                throw new IllegalArgumentException("Введено нулевое или отрицательное значение. Введите значение больше \"" + "0" + "\"");
+            }
+            int n = alphabet.size();
+            m = m % n;
+            k = k % n;
+            if (gcd(n, m) != 1) {//проверка простоты n относительно m
+                return null;
+            }
+            StringBuilder encryptedText = new StringBuilder();
+            //блок шифрования данных
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                int index = alphabet.indexOf(c);
+                index = (index * m + k) % n;
+                encryptedText.append(alphabet.get(index));
+            }
+            return encryptedText.toString();
+
+        } catch (IllegalArgumentException e){
+            throw new RuntimeException(e.getMessage());
         }
-        StringBuilder encryptedText = new StringBuilder();
-        //блок шифрования данных
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            int index = alphabet.indexOf(c);
-            index = (index * m + k) % n;
-            encryptedText.append(alphabet.get(index));
-        }
-        return encryptedText.toString();
+
+
+
+
     }
 
     public static String decrypt(String text, int m, int k) {
